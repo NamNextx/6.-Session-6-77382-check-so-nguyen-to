@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check So Nguyen To</title>
+</head>
+<body>
+<h1>Process check so nguyen to</h1>
+<input type="number" id="idInput" placeholder="Input here">
+<input type="button" value="Check" onclick="main()">
+
+<script>
+    function main() {
+        // let input = parseInt(document.getElementById('idInput').value);
+        // if (checkNguyenTo(input)) {
+        //         alert("So "+input+" La so nguyen to");
+        // }
+        // else alert("So "+input+" khong phai so nguyen to");
+        let arr=[];
+        let t=0;
+        for (let i=2;i<1001;i++){
+             if (checkNguyenTo(i)) {
+                 arr[t]=i;
+                 t++;
+             }
+
+        }
+        document.write(arr);
+
+    }
+
+
+    function checkNguyenTo(data) {
+        let input = data;
+        // Neu n < 2 thi khong phai la SNT
+        if (input < 2){
+            return false;
+        }
+
+        for (let i = 2; i < (input - 1); i++){
+            if (input % i == 0){
+                return false;
+            }
+        }
+
+        return true;
+        // if (input < 3) return false;
+        // else {
+        //     for (let i = 3; i <= (input / 2); i += 2) {
+        //         if (input % i == 0) {
+        //             return false;
+        //         }
+        //     }
+        //     return true;
+        // }
+    }
+</script>
+</body>
+</html>
